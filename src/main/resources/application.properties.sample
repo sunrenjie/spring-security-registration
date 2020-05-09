@@ -13,6 +13,10 @@ google.recaptcha.key.site=6LefKOAUAAAAAE9c8M_Das3vwhlMPmkFTAzvxokN
 google.recaptcha.key.secret=6LefKOAUAAAAAGs0hOsCoOBu14TKDGu100LkpnVo
 google.recaptcha.key.threshold=0.5
 
+# [Optional] proxy server+port for accessing google recaptcha service
+# google.recaptcha.proxyHost = localhost
+# google.recaptcha.proxyPort = 8080
+
 ################### JavaMail Configuration ##########################
 support.email=USERNAME@gmail.com
 spring.mail.host=smtp.gmail.com
@@ -24,6 +28,9 @@ spring.mail.properties.mail.transport.protocol=smtps
 spring.mail.properties.mail.smtps.auth=true
 spring.mail.properties.mail.smtps.starttls.enable=true
 spring.mail.properties.mail.smtps.timeout=8000
+# [Optional] proxy server+port for accessing the mail server
+# spring.mail.properties.mail.smtps.proxy.host = localhost
+# spring.mail.properties.mail.smtps.proxy.port = 8080
 
 ################### H2 Console Configuration ##########################
 spring.h2.console.enabled=true
