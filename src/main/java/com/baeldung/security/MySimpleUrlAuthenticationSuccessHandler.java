@@ -97,7 +97,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
              	username = authentication.getName();
              }
 
-            return "/homepage.html?user="+username;
+            return "/homepage";
         } else if (isAdmin) {
             return "/console.html";
         } else {

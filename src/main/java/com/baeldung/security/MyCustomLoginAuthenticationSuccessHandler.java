@@ -26,7 +26,7 @@ public class MyCustomLoginAuthenticationSuccessHandler implements Authentication
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
         addWelcomeCookie(gerUserName(authentication), response);
-        redirectStrategy.sendRedirect(request, response, "/homepage.html?user=" + authentication.getName());
+        redirectStrategy.sendRedirect(request, response, "/homepage");
 
         final HttpSession session = request.getSession(false);
         if (session != null) {
