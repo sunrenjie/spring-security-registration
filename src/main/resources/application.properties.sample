@@ -58,3 +58,7 @@ spring.datasource.password=
 ################### Hibernate Configuration ##########################
 spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=update
+
+# The option to switch db that helps to suppress the exception:
+#   HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+# spring.jpa.database=mysql

@@ -274,7 +274,10 @@ public class UserService implements IUserService {
     @Override
     public void addUserLocation(User user, String ip) {
         try {
-            final InetAddress ipAddress = InetAddress.getByName(ip);
+            InetAddress ipAddress = InetAddress.getByName(ip);
+            if (ipAddress.isLoopbackAddress() || ipAddress.isAnyLocalAddress()) {
+                ipAddress = InetAddress.getByName("8.8.8.8");
+            }
             final String country = databaseReader.country(ipAddress)
                 .getCountry()
                 .getName();

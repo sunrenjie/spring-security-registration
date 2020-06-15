@@ -110,7 +110,9 @@ public class DeviceService {
         String location = UNKNOWN;
 
         InetAddress ipAddress = InetAddress.getByName(ip);
-
+        if (ipAddress.isLoopbackAddress() || ipAddress.isAnyLocalAddress()) {
+            ipAddress = InetAddress.getByName("8.8.8.8");
+        }
         CityResponse cityResponse = databaseReader.city(ipAddress);
         if (Objects.nonNull(cityResponse) &&
                 Objects.nonNull(cityResponse.getCity()) &&
